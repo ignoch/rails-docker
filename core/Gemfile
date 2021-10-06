@@ -51,5 +51,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'unicorn', '~> 5.5.2'
 gem 'pg', '~> 1.2'
-gem 'sidekiq', '~> 6.0'
+gem 'sidekiq', '~> 6.2'
 gem 'redis-rails', '~> 5.0'
