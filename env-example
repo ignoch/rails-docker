@@ -5,7 +5,7 @@ GROUP_ID=1000
 
 # You would typically use rake secret to generate a secure token. It is
 # critical that you keep this value private in production.
-SECRET_TOKEN=XpS4GgnoJF9bYpf3qorKVzAeNOhIoRCPNS5
+#SECRET_TOKEN=XpS4GgnoJF9bYpf3qorKVzAeNOhIoRCPNS5
 
 # Docker expects to STDOUT everything
 RAILS_LOG_TO_STDOUT=true
@@ -34,7 +34,7 @@ LISTEN_ON=0.0.0.0:8010
 # containers.
 #
 # Everything else is standard Rails configuration for a PostgreSQL database.
-DATABASE_URL=postgresql://core:test_db_password@postgres:5432/core?encoding=utf8&pool=5&timeout=5000
+#DATABASE_URL=postgresql://core:test_db_password@postgres:5432/core?encoding=utf8&pool=5&timeout=5000
 
 # Both of these values are using the same Redis address but in a real
 # production environment you may want to separate Sidekiq to its own instance,
@@ -43,4 +43,4 @@ DATABASE_URL=postgresql://core:test_db_password@postgres:5432/core?encoding=utf8
 # We'll be using the same Docker link trick for Redis which is how we can
 # reference the Redis hostname as redis.
 CACHE_URL=redis://redis:6379/0
-JOB_WORKER_URL=redis://redis:6379/0
+JOB_WORKER_URL=redis://redis:6379/1

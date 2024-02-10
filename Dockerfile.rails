@@ -1,4 +1,4 @@
-FROM ruby:2.7
+FROM ruby:3.3
 
 ARG USER_ID
 ARG GROUP_ID
@@ -6,11 +6,14 @@ ARG GROUP_ID
 RUN addgroup --gid $GROUP_ID user
 RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
 ENV INSTALL_PATH /app
+ENV GEM_HOME /bundle
+ENV PATH $GEM_HOME/bin:$GEM_HOME/gems/bin:$PATH
 
 RUN mkdir -p $INSTALL_PATH
-RUN gem install rails bundler
+RUN mkdir -p $GEM_HOME
 RUN chown -R user:user $INSTALL_PATH
-WORKDIR $INSTALL_PATH
-
+RUN chown -R user:user $GEM_HOME
 USER $USER_ID
+RUN gem install rails bundler
+WORKDIR $INSTALL_PATH
 CMD ["/bin/sh"]

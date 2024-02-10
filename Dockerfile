@@ -1,5 +1,5 @@
 # Dockerfile - Development environment
-FROM ruby:2.7 
+FROM ruby:3.3
 
 ARG USER_ID
 ARG GROUP_ID
